@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id = "wrapper">
+      <nav class = "semi-nav">
+        <a href="/"><h1 class = "logo">book<span>corner</span></h1></a>
+        <input type="text" placeholder= "The Great Gatsby">
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">My Books</a></li>
+          <li><a href="/">Sign In</a></li>
+          <li><a href="/">Join</a></li>
+        </ul>
+      </nav>
+
+      <%= yield %>
+      
+    </div>
+
+
   </body>
 </html>
