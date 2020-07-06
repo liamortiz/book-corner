@@ -1,0 +1,2 @@
+class UserShelf < ApplicationRecord
+end
