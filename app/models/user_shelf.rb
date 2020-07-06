@@ -1,4 +1,4 @@
 class UserShelf < ApplicationRecord
   belongs_to :user
-  has_many :books
+  belongs_to :book
 end

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_174331) do
 
   create_table "user_shelves", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
