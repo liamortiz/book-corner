@@ -15,9 +15,13 @@ ActiveRecord::Schema.define(version: 2020_07_06_174331) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "author"
-    t.datetime "release_date"
-    t.string "category"
+    t.string "authors"
+    t.datetime "published_date"
+    t.string "categories"
+    t.string "isbn"
+    t.integer "average_rating"
+    t.integer "ratings_count"
+    t.string "image_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,8 +43,10 @@ ActiveRecord::Schema.define(version: 2020_07_06_174331) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "email"
     t.string "password"
+    t.string "name"
+    t.string "avatar_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

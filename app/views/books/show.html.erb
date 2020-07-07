@@ -1,32 +1,21 @@
 <h1> Show Page for "<%= @book.title%>"</h1>
 
-<p>Image (tbd)</p><br>
 
 
-<p>Author: <%= @book.author%></p>
-<p>Published: <%= @book.release_date.strftime("%B %-d, %Y")%></p>
-<p>Category: <%= @book.category%></p>
+<p><img src = <%= @book.image_link%>></p><br>
+<p>Author: <%= @book.authors%></p>
+
+<p>Published: <%= @book.published_date%></p>
+<p>Category: <%= @book.categories%></p>
 <p>Average User Rating: <%= @book.average_rating%></p><br>
+<p>Rating Count: <%= @book.ratings_count%></p><br>
 <p>Description: <%= @book.description%></p><br>
-
-<b><p style="color:red">*** Add to my book shelf ***</p> </b><br><br>
-
-<hr><br>
-
-<%= link_to "Leave a Review", new_review_path %><br>
-<br><hr><br>
-
-
-<h2>What other users are saying about this book:</h2><br>
-<% if @book.reviews.empty?%>
-Looks like no one has reviewed this book yet. Be the first to review!
-<% else %>
-<% rev= @book.reviews.reverse%>
-<% rev.each do |review|%>
-<fieldset>
-Reviewed by: <%= review.user.username%><br>
-Rating: <%= review.rating%> out of 5<br>
-Comments: <%= review.content%>
-</fieldset><br>
-<%end%>
-<%end%>
+<hr>
+<%# <%= link_to "Add"%> %>
+<hr>
+<p>Reviews</p>
+    <% @book.reviews.each do |review|%>
+       Content: <%= review.content%><br>
+       Rating:  <%= review.rating%><br>
+        <%= review.user.name%>
+    <%end%>
