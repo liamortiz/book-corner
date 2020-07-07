@@ -1,0 +1,10 @@
+<h1>My Book Shelf</h1>
+
+Below are lists of books you have saved for the future. To remove books from your bookshelf, click "remove".
+
+<% @user.books.each do |book|%>
+<fieldset>
+<p><%= book.title%></p>
+<p><%= book.author %></p>
+</fieldset>
+<%end%>

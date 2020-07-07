@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :books
   resources :reviews
   resources :users
+  
 
   root "static#index"
 
