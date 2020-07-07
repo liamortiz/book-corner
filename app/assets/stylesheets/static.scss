@@ -1,3 +1,52 @@
 // Place all the styles related to the Static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import '_variables';
+
+#home-wrapper {
+  .create-account-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1em;
+    .hero {
+      padding: 1em;
+      background: red;
+      width: 20rem;
+      height: 20rem;
+      background-image: image_url("hero.jpg");
+      background-position: center;
+      background-size: contain;
+    }
+    .create-account-form {
+      padding: 1em;
+      h2 {
+        font-family: 'Roboto';
+        font-weight: lighter;
+      }
+      input {
+        display: block;
+        padding: .5em;
+        margin: .5em 0;
+        width: 16rem;
+        height: 1rem;
+        &:focus {
+          outline: none;
+        }
+      }
+      input[type="submit"] {
+        width: 5rem;
+        height: 2rem;
+        border: none;
+        color: white;
+        background: $greenish;
+        &:hover{
+          cursor: pointer;
+          background-color: lighten($greenish, 10%);
+        }
+      }
+    }
+  }
+}
