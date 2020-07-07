@@ -7,10 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Book.destroy_all
+User.destroy_all
+Review.destroy_all
+
+
 
 
 10.times do
-    Book.create(title: Faker::Book.title , description: Faker::Lorem.words(number: 4), author: Faker::Book.author , release_date: Faker::Date.between(from: '1979-09-23', to: '2020-09-25'), category: Faker::Book.genre)
+    Book.create(title: Faker::Book.title , description: Faker::Lorem.paragraph(sentence_count: 5), author: Faker::Book.author , release_date: Faker::Date.between(from: '1979-09-23', to: '2020-09-25'), category: Faker::Book.genre)
 end
 
 
@@ -19,7 +23,7 @@ end
 end
 
 12.times do
-    Review.create(rating: rand(6), content: Faker::Lorem.words(number: 15), user_id: User.all.sample.id, book_id: Book.all.sample.id)
+    Review.create(rating: rand(1..5), content: Faker::TvShows::Community.quotes, user_id: User.all.sample.id, book_id: Book.all.sample.id)
 end
 
 
