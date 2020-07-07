@@ -14,6 +14,14 @@ class ReviewsController < ApplicationController
         redirect_to book_path(params[:review][:book_id])
     end
 
+    def edit
+
+    end
+
+    def update
+        
+    end
+
     private
 
     def review_params
