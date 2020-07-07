@@ -9,8 +9,10 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        # byebug
         @review = Review.create(review_params)
-        redirect_to book_path(params[:review][:book_id])
+        @book = Book.find_by(id: params[:review][:book_id])
+        redirect_to book_path(@book.isbn)
     end
 
     def edit

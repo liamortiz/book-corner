@@ -11,7 +11,7 @@
 <p>Rating Count: <%= @book.ratings_count%></p><br>
 <p>Description: <%= @book.description%></p><br>
 <hr>
-<%# <%= link_to "Add"%> %>
+<%= link_to "Add a Review", new_review_path %>
 <hr>
 <p>Reviews</p>
     <% @book.reviews.each do |review|%>
