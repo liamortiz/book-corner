@@ -1,26 +1,37 @@
 <h1>My Corner</h1><br><br>
 
-<%# Below are lists of books you have saved for the future. To remove books from your bookshelf, click "remove". %>
 <h2> My Bookshelf</h2><br><br>
-<% @user.books.each do |book|%>
-<fieldset>
-<p><%= book.title%></p>
-<p><%= book.author %></p>
-</fieldset>
-<%end%>
+    <% if @user.books.empty?%>
+        Your Bookshelf is empty. You can add any book to your bookshelf by click "Add to my bookshelf" on a book's detial page.
+    <%else%>
+        <% @user.books.each do |book|%>
+            <fieldset>
+            <p><%= book.title%></p>
+            <p><%= book.author %></p>
+            </fieldset>
+            <%end%>
+    <%end%>
 
-<br><br><b><%= link_to "Write a New Review", new_review_path%><br><br>
+<hr>
 
-<h2> My reviews</h2>
+<br><br><br><b><%= link_to "Write a New Review", new_review_path%></b><br><br>
 
-<% @user.reviews.each do |review|%>
-<fieldset>
-Book Title: <%= link_to review.book.title, book_path(review.book_id)%><br>
-My Rating: <%= review.rating%> out of 5<br>
-My Comments: <%= review.content%><br><br>
-<%=link_to "Edit Review", edit_review_path(review.id) %><br><br>
+<hr>
 
+<h2> My reviews</h2><br><br>
+    <% if @user.reviews.empty?%>
+        You have no reivews...yet!
+    <%else%>
+        <p>You've posted <%= @user.reviews.size%> reviews!</p>
+        <% @user.reviews.each do |review|%>
+            <fieldset>
+            Book Title: <%= link_to review.book.title, book_path(review.book_id)%><br>
+            My Rating: <%= review.rating%> out of 5<br>
+            My Comments: <%= review.content%><br><br>
+            <%=link_to "Edit Review", edit_review_path(review.id) %><br><br>
+            <%=button_to "Delete Review", review_path(review.id), method: :delete %><br><br>
+            </fieldset>
+        <%end%>
+    <%end%>
 
-</fieldset>
-<%end%>
 <br><br><br><br><br>

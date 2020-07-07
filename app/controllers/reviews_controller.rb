@@ -9,17 +9,25 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        # byebug
         @review = Review.create(review_params)
         redirect_to book_path(params[:review][:book_id])
     end
 
     def edit
-
+        @review = Review.find(params[:id])
     end
 
     def update
+        @review = Review.find(params[:id])
+        @review.update(review_params)
         
+        redirect_to user_path(@review.user_id)
+    end
+
+    def destroy
+        @review = Review.find(params[:id])
+        @review.destroy
+        redirect_to user_path(@review.user_id)
     end
 
     private

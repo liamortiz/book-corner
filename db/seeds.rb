@@ -22,7 +22,7 @@ end
     User.create(username: Faker::Name.first_name, password: Faker::Color.hex_color)
 end
 
-12.times do
+100.times do
     Review.create(rating: rand(1..5), content: Faker::TvShows::Community.quotes, user_id: User.all.sample.id, book_id: Book.all.sample.id)
 end
 
