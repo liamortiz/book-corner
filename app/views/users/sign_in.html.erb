@@ -1,3 +1,11 @@
-<div class = "signin-container">
-  <h1>Sign In</h1>
+<div class = "create-account-form sign-in">
+  <h2>Welcome Back!</h2>
+  <%= form_with model: User.new, method: :post, html: {autocomplete: "off"} do |f| %>
+    <%= f.email_field :email, placeholder: "example@gmail.com", required: :required %>
+    <%= f.password_field :password, placeholder: "Password", required: :required %>
+    <%= f.submit "Sign In", {controller: :user, action: :handle_sign_in }%>
+    <%= link_to "register", "/" %>
+  <% end %>
 </div>
+
+<img src= <%= image_url("book.svg")%> alt="" class = "book-icon">

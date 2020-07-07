@@ -14,6 +14,10 @@ class UsersController < ApplicationController
   def sign_in
   end
 
+  def handle_sign_in
+    byebug
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end

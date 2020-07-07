@@ -1,9 +1,22 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.signin-container {
-  min-height: 30rem; // TEMP: Remove Later
-  h1 {
-    color: red;
+@import '_variables';
+
+.sign-in {
+  padding: 3em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  margin: 2em auto;
+  margin-top: 5em;
+  h2 {
+    color: black;
   }
+  a {
+    margin-left: .5em;
+  }
+}
+
+.book-icon {
+
 }
