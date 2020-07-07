@@ -98,9 +98,61 @@
         height: 8rem;
       }
     }
-    .sample-book {
+    .book-reviews {
       flex: 1.5;
       height: 30rem;
+      .review-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        .user-review {
+          flex: 2;
+          padding: 2em;
+          height: 4rem;
+          a {
+            text-decoration: none;
+            color: $greenish;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          p {
+            font-family: 'Helvetica';
+            font-size: 90%;
+            margin: .5em 0;
+            text-align: left;
+            line-height: 1.5em;
+          }
+          .avatar {
+            border-radius: 100%;
+            float: left;
+            width: 55px;
+            height: 55px;
+            margin-right: .5em;
+
+          }
+          ul {
+            margin: 0 auto;
+            width: 6rem;
+            li {
+              list-style-type: none;
+              float: left;
+            }
+          }
+        }
+        .book-image {
+          flex: 0.8;
+          padding-top: .5em;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 6rem;
+            height: 8rem;
+          }
+        }
+      }
+
     }
   }
 
