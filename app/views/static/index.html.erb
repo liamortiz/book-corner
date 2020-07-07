@@ -1,0 +1,20 @@
+<div id = "home-wrapper">
+  <div class = "create-account-container hero">
+    <div class = "moto">
+      <h2>
+        Join and connect with <br><span>hundreds</span> of users.
+      </h2>
+    </div>
+    <div class = "create-account-form">
+      <h2>Create a free account!</h2>
+      <%= form_with html: {autocomplete: "off"} do %>
+        <%= text_field_tag :name, "", placeholder: "Name"%>
+        <%= text_field_tag :email, "", placeholder: "example@gmail.com" %>
+        <%= text_field_tag :password, "", placeholder: "Password" %>
+        <%= submit_tag "Sign Up" %>
+      <% end %>
+    </div>
+
+
+  </div>
+</div>

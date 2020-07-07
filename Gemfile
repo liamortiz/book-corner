@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'google-api-client', '~> 0.34'
+gem 'googlebooks', '~> 0.0.9'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'faker'
 
