@@ -13,7 +13,7 @@
     padding: 1em;
     height: 20rem;
 
-    background-image: image_url("hero3.jpg");
+    background-image: image_url("hero.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,4 +61,28 @@
       }
     }
   }
+
+  .features-preview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    .categories {
+      text-align: center;
+      color: white;
+      flex: 1;
+      padding: 1em;
+      height: 25rem;
+      background: $greenish;
+      h3 {
+        font-family: 'Roboto';
+      }
+    }
+    .sample-book {
+      flex: 1;
+      height: 30rem;
+    }
+  }
+
 }
