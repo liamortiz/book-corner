@@ -9,24 +9,25 @@
 <p>Average User Rating: <%= @book.average_rating%></p><br>
 <p>Description: <%= @book.description%></p><br>
 
-<b><p style="color:red">*** Add to my book shelf ***</p> </b><br><br>
+<b><p style="color:red">*** Add to my book shelf ***</p> </b><br>
 
-<hr><br>
-
-<%= link_to "Leave a Review", new_review_path %><br>
 <br><hr><br>
 
+<%= button_to "Leave a Review", new_review_path, method: :get %><br>
+
+<br><hr><br>
 
 <h2>What other users are saying about this book:</h2><br>
-<% if @book.reviews.empty?%>
-Looks like no one has reviewed this book yet. Be the first to review!
-<% else %>
-<% rev= @book.reviews.reverse%>
-<% rev.each do |review|%>
-<fieldset>
-Reviewed by: <%= review.user.username%><br>
-Rating: <%= review.rating%> out of 5<br>
-Comments: <%= review.content%>
-</fieldset><br>
-<%end%>
-<%end%>
+
+    <% if @book.reviews.empty?%>
+        Looks like no one has reviewed this book yet. Be the first to review!
+    <% else %>
+        <% rev= @book.reviews.reverse%>
+        <% rev.each do |review|%>
+            <fieldset>
+            Reviewed by: <%= review.user.username%><br>
+            Rating: <%= review.rating%> out of 5<br>
+            Comments: <%= review.content%>
+            </fieldset><br>
+        <%end%>
+    <%end%>
