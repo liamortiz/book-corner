@@ -1,10 +1,22 @@
-<h1>My Book Shelf</h1>
+<h1>My Corner</h1><br><br>
 
-Below are lists of books you have saved for the future. To remove books from your bookshelf, click "remove".
-
+<%# Below are lists of books you have saved for the future. To remove books from your bookshelf, click "remove". %>
+<h2> My Bookshelf</h2><br><br>
 <% @user.books.each do |book|%>
 <fieldset>
 <p><%= book.title%></p>
 <p><%= book.author %></p>
+</fieldset>
+<%end%>
+
+<h2>Write a new review</h2>
+
+<h2>My reviews</h2>
+
+<% @user.reviews.each do |review|%>
+<fieldset>
+Book Title:<%= review.book.title%><br>
+
+
 </fieldset>
 <%end%>
