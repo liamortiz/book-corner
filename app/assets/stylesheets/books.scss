@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import '_variables';
+
 #book-wrapper {
-  
+  .result-container {
+    margin-top: 1em;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    .settings {
+      padding: 1em;
+      flex: 1;
+      height: auto;
+      background: $greenish;
+      h2 {
+        color: white;
+        text-align: center;
+        font-family: 'Roboto';
+      }
+    }
+    .result {
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex: 2;
+      padding: 1em;
+      overflow-y: scroll;
+      height: 50rem;
+
+      .book-cover {
+        width: 8rem;
+        height: 10rem;
+        margin: .2em;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }

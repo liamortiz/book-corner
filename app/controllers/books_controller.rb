@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
     def index
-        @books = Book.all
+      @books = GoogleBooks.search("art", {count: 40})
     end
 
     def show
