@@ -9,14 +9,18 @@
 </fieldset>
 <%end%>
 
-<h2>Write a new review</h2>
+<br><br><b><%= link_to "Write a New Review", new_review_path%><br><br>
 
-<h2>My reviews</h2>
+<h2> My reviews</h2>
 
 <% @user.reviews.each do |review|%>
 <fieldset>
-Book Title:<%= review.book.title%><br>
+Book Title: <%= link_to review.book.title, book_path(review.book_id)%><br>
+My Rating: <%= review.rating%> out of 5<br>
+My Comments: <%= review.content%><br><br>
+<%=link_to "Edit Review", edit_review_path(review.id) %><br><br>
 
 
 </fieldset>
 <%end%>
+<br><br><br><br><br>
