@@ -36,7 +36,7 @@
         font-family: 'Roboto';
         color: white;
       }
-      input[type="text"] {
+      input[type="text"], input[type="password"], input[type="email"]  {
         display: block;
         padding: .5em;
         margin: .5em 0;

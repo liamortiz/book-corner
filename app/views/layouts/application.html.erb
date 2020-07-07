@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookifly</title>
+    <title>BookCorner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,11 +18,10 @@
         <input type="text" placeholder= "The Great Gatsby">
 
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="/" class = "active">Home</a></li>
           <li><a href="/">Browse</a></li>
           <li><a href="/">My Books</a></li>
-          <li><a href="/">Sign In</a></li>
-          <li><a href="/">Join</a></li>
+          <li><%= link_to "Sign In", controller: :users, action: :sign_in %></li>
         </ul>
       </nav>
 

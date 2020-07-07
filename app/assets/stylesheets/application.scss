@@ -24,6 +24,9 @@
 .checked {
   color: gold;
 }
+.active {
+  color: $greenish !important;
+}
 
 #wrapper {
   max-width: 1200px;
