@@ -5,7 +5,9 @@ class BooksController < ApplicationController
     end
 
     def show
-        @book = Book.find(params[:id])
-        @review = Review.new
+      @book = Book.find_by(id: params[:id])
+      unless @book
+        @book = GoogleBooks.search(isbn: params[:id]).first
+      end
     end
 end

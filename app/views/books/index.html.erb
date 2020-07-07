@@ -6,6 +6,7 @@
     <div class = "result">
       <% @books.each do |book| %>
         <img class = "book-cover" src= <%= book.image_link %> alt="">
+        <%= link_to "Visit", "books/#{book.isbn}" %>
       <% end %>
     </div>
   </div>
