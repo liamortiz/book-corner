@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -17,6 +19,7 @@
 
         <ul>
           <li><a href="/">Home</a></li>
+          <li><a href="/">Browse</a></li>
           <li><a href="/">My Books</a></li>
           <li><a href="/">Sign In</a></li>
           <li><a href="/">Join</a></li>
@@ -24,7 +27,16 @@
       </nav>
 
       <%= yield %>
-      
+
+      <footer>
+        <div class = "social-icons-container">
+          <a href="/"><img src= <%= image_url("twitter.svg")%> alt=""></a>
+          <a href="/"><img src= <%= image_url("facebook.svg")%> alt=""></a>
+          <a href="/"><img src= <%= image_url("instagram.svg")%> alt=""></a>
+        </div>
+        <p>Copyright &copy bookcorner 2020</p>
+      </footer>
+
     </div>
 
 

@@ -20,6 +20,11 @@
   padding: 0;
 }
 
+//Global styles Rating
+.checked {
+  color: gold;
+}
+
 #wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -43,7 +48,7 @@
       font-size: 190%;
       font-family: 'Helvetica';
       span {
-        color: black;
+        color: $dark;
       }
     }
   }
@@ -73,6 +78,39 @@
         &:hover {
           color: $greenish;
         }
+      }
+    }
+  }
+}
+
+footer {
+  background: $cream;
+  text-align: center;
+  height: 3.5rem;
+  position: relative;
+  p {
+    padding-top: 1.5em;
+    font-size: 90%;
+    font-family: 'Roboto';
+  }
+  .social-icons-container {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: $dark;
+    height: 3.5rem;
+    width: 13rem;
+    position: absolute;
+    top: -55px;
+    right: 10px;
+    img {
+      display: inline-block;
+      padding-top: .6em;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin: 0 .5em;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
       }
     }
   }
