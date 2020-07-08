@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/books/search', to: 'books#search', as: 'search'
   get '/books/:isbn', to: 'books#show'
-  get '/books/?q=:q', to: 'books#index'
+  get '/books/?q=:q&page=:page', to: 'books#index'
   get '/books', to: 'books#index'
 
   resources :reviews

@@ -23,7 +23,7 @@
 
         <ul>
           <li><a href="/" class = <%= current_class?('/') %>>Home</a></li>
-          <li><%= link_to "Browse", books_path, class: current_class?(books_path) %></li>
+          <li><%= link_to "Browse", '/books/?q=anime&page=1', class: current_class?(books_path) %></li>
           <li><a href="/">My Books</a></li>
           <li><%= link_to "Sign In", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
         </ul>

@@ -3,15 +3,27 @@
     <div class = "settings">
       <h2>Categories</h2>
       <div class= "categories">
-        <% %w(fiction fantasy romance non-fiction mystery contemporary biography chick-lit memoir travel photography meditation crime comics magazines anime music cookbooks business psychology programming c++ coding computerscience art python).each do |category| %>
-          <%= link_to "#{category}", "/books/?q=#{category}"%>
+        <% %w(fiction fantasy romance non-fiction mystery contemporary biography chick-lit memoir travel photography meditation crime comics magazines anime music cookbooks business psychology programming coding computerscience art python).each do |category| %>
+          <%= link_to "#{category}", "/books/?q=#{category}&page=1"%>
         <% end %>
+
+        <div class = "pagination">
+          <%# Create pagination here %>
+          <% %w(1 2 3 4 5).each do |page| %>
+            <%= link_to page, "/books/?q=#{params[:q]}&page=#{page}", class: params[:page] == page ? "active-page" : ""%>
+          <% end %>
+        </div>
+
       </div>
     </div>
     <div class = "result">
       <% @books.each do |book| %>
         <a href= <%="/books/#{book.isbn}" %>>
-          <img class = "book-cover" src= <%= book.image_link %> alt="">
+          <% if book.image_link == nil %>
+            <img class = "book-cover" src= <%= image_url("missing_cover.jpg") %> alt="">
+          <% else %>
+            <img class = "book-cover" src= <%= book.image_link %> alt="">
+          <% end %>
         </a>
       <% end %>
     </div>

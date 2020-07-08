@@ -1,9 +1,15 @@
 <h1> Show Page for "<%= @book.title%>"</h1>
 
-<p><img src = <%= @book.image_link%>></p><br>
+<% if @book.image_link == nil%>
+  <img src = <%=image_url('missing_cover.jpg') %>>
+<% else %>
+  <img src = <%= @book.image_link%>>
+<% end %>
+
+<p></p><br>
 <b><p>Author:</b> <%= @book.authors%></p>
 
-<b><p>Published:</b><%= @book.published_date %>  
+<b><p>Published:</b><%= @book.published_date %>
 <b><p>Category:</b> <%= @book.categories%></p>
 <b><p>Average User Rating:</b> <%= @book.average_rating%></p>
 <b><p>Rating Count:</b> <%= @book.ratings_count%></p><br>
