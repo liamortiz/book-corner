@@ -7,6 +7,8 @@
         <% else %>
           <img src = <%= @book.image_link%>>
         <% end %>
+        <%= button_to "Add Bookshelf", '/' %>
+        <%= button_to "Rate It", '/' %>
       </div>
     </div>
     <div class = "book-information">
@@ -42,6 +44,7 @@
           <span class="fa fa-star checked"></span>
         <% end %>
         <br>
+        <img src = <%= image_url(review.user.avatar_url) %>>
         <p><b><%= review.user.name %> says</b></p>
         <p class = "content"><%= review.content %></p>
       </div>

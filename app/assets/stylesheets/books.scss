@@ -77,6 +77,21 @@
     flex-wrap: nowrap;
     justify-content: center;
     .user-interaction {
+      input {
+        display: block;
+        width: 8rem;
+        padding: .5em;
+        border: none;
+        background: $greenish;
+        color: white;
+        font-family: 'Helvetica';
+        margin: .2em 0;
+        border-radius: 5px;
+        &:hover {
+          cursor: pointer;
+          background-color: lighten($greenish, 10%);
+        }
+      }
       flex: 1;
       .book-image {
         overflow: hidden;
@@ -113,10 +128,19 @@
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
       margin: 1em 0;
       margin-left: 2em;
+      img {
+        width: 4rem;
+        height: 4rem;
+        float: left;
+        margin: .5em;
+        margin-right: 1em;
+        padding-bottom: 2rem;
+      }
       .content {
         max-width: 60%;
         margin-top: 1em;
         line-height: 1.2em;
+        text-align: left;
       }
     }
   }
