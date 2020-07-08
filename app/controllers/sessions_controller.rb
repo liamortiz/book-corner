@@ -20,4 +20,13 @@ class SessionsController < ApplicationController
     
     #     redirect_to users_path
     #   end 
+
+    def clear_session
+        
+            session[:count_it_out] = 0
+            redirect_back fallback_location: books_path
+        end
+
+       
+    
 end
