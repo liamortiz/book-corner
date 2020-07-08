@@ -1,9 +1,12 @@
 class BooksController < ApplicationController
 
     def index
-      cookies[:count_it_out] = 1
-      cookies[:count_it_out] = cookies[:count_it_out] + 1
-
+      # byebug
+      if cookies[:count_it_out]
+        cookies[:count_it_out] = cookies[:count_it_out].to_i + 1
+      else
+        cookies[:count_it_out] = 1
+      end
 
       # Filter the search results from the API via page index and query
       @books = GoogleBooks.search(self.query, {count: 40,
