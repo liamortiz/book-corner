@@ -3,9 +3,9 @@
     <div class = "settings">
       <h2>Categories</h2>
       <div class= "categories">
-        <%= link_to "comics & cartoons", '/books/?q=comics+cartoons'%>
-        <%= link_to "love & romance", '/books/?q=love+romance'%>
-        <%= link_to "war", '/books/?q=war'%>
+        <% %w(fiction fantasy romance non-fiction mystery contemporary biography chick-lit memoir travel photography meditation crime comics magazines anime music cookbooks business psychology programming c++ coding computerscience art python).each do |category| %>
+          <%= link_to "#{category}", "/books/?q=#{category}"%>
+        <% end %>
       </div>
     </div>
     <div class = "result">

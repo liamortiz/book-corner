@@ -16,10 +16,24 @@
       padding: 1em;
       flex: 1;
       height: auto;
+      text-align: center;
       h2 {
-
-        text-align: center;
         font-family: 'Roboto';
+        margin-bottom: 1em;
+      }
+      .categories {
+        a {
+          border-radius: 10px;
+          text-decoration: none;
+          color: white;
+          padding: .3em;
+          background: $greenish;
+          display: inline-block;
+          margin: .2em .2em 0 .2em;
+          &:hover {
+            background: lighten($greenish, 10%);
+          }
+        }
       }
     }
     .result {
