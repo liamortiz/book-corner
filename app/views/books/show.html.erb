@@ -1,36 +1,53 @@
-<h1> Show Page for "<%= @book.title%>"</h1>
+<div id = "book-wrapper">
+  <div class = "book-details">
+    <div class = "user-interaction">
+      <div class = "book-image">
+        <% if @book.image_link == nil%>
+          <img src = <%=image_url('missing_cover.jpg') %>>
+        <% else %>
+          <img src = <%= @book.image_link%>>
+        <% end %>
+        <%= button_to "Add Bookshelf", '/' %>
+        <%= button_to "Rate It", '/' %>
+      </div>
+    </div>
+    <div class = "book-information">
+      <h1><%= @book.title%></h1>
+      <% if @book.average_rating %>
+        <% @book.average_rating.times do %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <%# Subtract 5 to the average to determine the empty stars %>
+        <% (5 - @book.average_rating).times do %>
+          <span class="fa fa-star"></span>
+        <% end %>
+      <% else %>
+        <%# No ratings %>
+        <% 5.times do %>
+          <span class="fa fa-star"></span>
+        <% end %>
+      <% end %>
 
-<% if @book.image_link == nil%>
-  <img src = <%=image_url('missing_cover.jpg') %>>
-<% else %>
-  <img src = <%= @book.image_link%>>
-<% end %>
-
-<p></p><br>
-<b><p>Author:</b> <%= @book.authors%></p>
-
-<b><p>Published:</b><%= @book.published_date %>
-<b><p>Category:</b> <%= @book.categories%></p>
-<b><p>Average User Rating:</b> <%= @book.average_rating%></p>
-<b><p>Rating Count:</b> <%= @book.ratings_count%></p><br>
-<b><p>Description:</b> <%= @book.description%></p><br>
-
-<hr><br>
-
-<%= link_to "Add a Review", new_review_path %>
-
-<br><br><hr>
-
-<h2>Reviews</h2>
-
-    <% if @book.reviews.empty? %>
-        <br><p>Be the first to review this book!</p><br>
-    <% else %>
-        <% @book.reviews.each do |review|%>
-            <fieldset>
-                User:  <%= review.user.name%><br>
-                Rating:  <%= review.rating%><br>
-                Content: <%= review.content%><br>
-            </fieldset>
-        <%end%>
-    <%end%>
+      <p class = "authors">by <%= @book.authors%></p>
+      <% if @book.published_date %>
+        <p class = "published">Published <%= @book.published_date.strftime("%b %Y") %></p>
+      <% end %>
+      <p class = "description">
+        <%= @book.description%>
+      </p>
+    </div>
+  </div>
+  <div class = "reviews-container">
+    <% @book.reviews.each do |review| %>
+      <div class = "review">
+        <% review.rating.times do %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <br>
+        <img src = <%= image_url(review.user.avatar_url) %>>
+        <p><b><%= review.user.name %> says</b></p>
+        <p class = "content"><%= review.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

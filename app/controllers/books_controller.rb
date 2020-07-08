@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+    # TODO: Fix weird browse page bug swapping book ISBNS
+    # TODO: Make code more efficient
     def index
       # byebug
       if cookies[:count_it_out]
@@ -34,11 +35,6 @@ class BooksController < ApplicationController
     end
 
     def query
-      # Gets the query from the url
-      if params[:q]
-        return params[:q]
-      else
-        'anime'
-      end
+      (params[:q] ? params[:q] : 'anime')
     end
 end
