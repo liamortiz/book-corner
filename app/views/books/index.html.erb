@@ -1,12 +1,14 @@
 <div id = "book-wrapper">
   <div class = "result-container">
     <div class = "settings">
-      <h2>Search Options</h2>
+      <h2>Categories</h2>
+
     </div>
     <div class = "result">
       <% @books.each do |book| %>
-        <img class = "book-cover" src= <%= book.image_link %> alt="">
-        <%= link_to "Visit", "/books/#{book.isbn}" %>
+        <a href= <%="/books/#{book.isbn}" %>>
+          <img class = "book-cover" src= <%= book.image_link %> alt="">
+        </a>
       <% end %>
     </div>
   </div>

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get "users/sign_in", to: "users#sign_in"
-  # get "/books/:isbn", to: "books#show", as: 'book'
+  get "/users/sign_in", to: "users#sign_in"
 
-  resources :books
+  get '/books', to: 'books#index'
+  get '/books/:isbn', to: 'books#show'
+  get '/books/?q=:q', to: 'books#index'
+
   resources :reviews
   resources :users
 

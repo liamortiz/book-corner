@@ -16,9 +16,8 @@
       padding: 1em;
       flex: 1;
       height: auto;
-      background: $greenish;
       h2 {
-        color: white;
+
         text-align: center;
         font-family: 'Roboto';
       }
@@ -32,8 +31,12 @@
       padding: 1em;
       overflow-y: scroll;
       height: 50rem;
+      a {
+        height: 10rem;
+      }
 
       .book-cover {
+        box-sizing: border-box;
         width: 8rem;
         height: 10rem;
         margin: .2em;
