@@ -1,18 +1,10 @@
 class BooksController < ApplicationController
 
     def index
-<<<<<<< HEAD
-      @books = GoogleBooks.search(self.query, {count: 40})
-      cookies[:page_count] = 1
-      cookies[:page_count].to_i = cookies[:page_count].to_i + 1
-     
-    end
+      cookies[:count_it_out] = 1
+      cookies[:count_it_out] = cookies[:count_it_out] + 1
 
-    def show
-      cookies[:zebra_farts] = "fffff"
-       @book = Book.find_by(isbn: params[:isbn])
 
-=======
       # Filter the search results from the API via page index and query
       @books = GoogleBooks.search(self.query, {count: 40,
         page: params[:page] ? params[:page].to_i : 1})
@@ -24,7 +16,6 @@ class BooksController < ApplicationController
       # If the book is in the databse do nothing
       # Else add the book to the databse
       @book = Book.find_by(isbn: params[:isbn])
->>>>>>> 31694896bec0bbec9d62d3d6577ffe50ad18e622
       unless @book
         @book = GoogleBooks.search(isbn: params[:isbn]).first
         @book = Book.create(title: @book.title, description: @book.description, authors: @book.authors,

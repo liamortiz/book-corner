@@ -16,6 +16,15 @@
     </div>
   </div>
 
+  <div>
+<% if flash[:errors]%>
+    <% flash[:errors].each do |error|%>
+    <%= error%>
+    <%end%>
+<%end%>
+
+</div>
+
   <div class = "features-preview">
     <div class = "categories">
       <h3>Looking for something new?</h3>
