@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
       # Filter the search results from the API via page index and query
       @books = GoogleBooks.search(self.query, {count: 40,
-        page: params[:page] ? params[:page].to_i : 1, order_by: 'newest'})
+        page: params[:page] ? params[:page].to_i : 1})
       # Remove any that doesn't have ISBNS
       @books = @books.select{|book| book.isbn}
     end
@@ -32,11 +32,6 @@ class BooksController < ApplicationController
     end
 
     def query
-      # Gets the query from the url
-      if params[:q]
-        return params[:q]
-      else
-        'anime'
-      end
+      (params[:q] ? params[:q] : 'anime')
     end
 end

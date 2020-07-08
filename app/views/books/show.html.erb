@@ -36,6 +36,15 @@
     </div>
   </div>
   <div class = "reviews-container">
-
+    <% @book.reviews.each do |review| %>
+      <div class = "review">
+        <% review.rating.times do %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <br>
+        <p><b><%= review.user.name %> says</b></p>
+        <p class = "content"><%= review.content %></p>
+      </div>
+    <% end %>
   </div>
 </div>
