@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/books', to: 'books#index'
 
   resources :reviews, only: [:create]
-  resources :users
+  resources :users, only: [:create, :show]
 
   root "static#index"
 

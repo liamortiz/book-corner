@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    
   end
 
   def new
@@ -24,7 +23,7 @@ class UsersController < ApplicationController
   def handle_sign_in
     byebug
     # @user = User.find_by(email: params[:user][:email])
-    # @user.password == 
+    # @user.password ==
   end
 
   def user_params
