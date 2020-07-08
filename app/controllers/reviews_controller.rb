@@ -9,10 +9,10 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        # byebug
-        @review = Review.create(review_params)
-        @book = Book.find_by(id: params[:review][:book_id])
-        redirect_to book_path(@book.isbn)
+      @review = Review.create(review_params)
+      @review.book.update_rating_average
+
+      redirect_to book_path(@review.book.isbn)
     end
 
     def edit
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     def update
         @review = Review.find(params[:id])
         @review.update(review_params)
-        
+
         redirect_to user_path(@review.user_id)
     end
 
@@ -38,5 +38,5 @@ class ReviewsController < ApplicationController
         params.require(:review).permit(:user_id,:book_id,:rating, :content)
     end
 
-    
+
 end

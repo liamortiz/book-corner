@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   get "/users/sign_in", to: "users#sign_in"
 
   get '/books/search', to: 'books#search', as: 'search'
-  get '/books/:isbn', to: 'books#show'
+  get '/books/:isbn', to: 'books#show', as: 'book'
   get '/books/?q=:q&page=:page', to: 'books#index'
   get '/books', to: 'books#index'
 
-  resources :reviews
+  resources :reviews, only: [:create]
   resources :users
 
   root "static#index"

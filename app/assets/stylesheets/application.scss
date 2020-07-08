@@ -21,9 +21,13 @@
 }
 
 //Global styles Rating
+.fa {
+  color: $dark;
+}
 .checked {
   color: gold;
 }
+
 .active {
   color: $greenish !important;
 }

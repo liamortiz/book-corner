@@ -8,7 +8,6 @@
           <img src = <%= @book.image_link%>>
         <% end %>
         <%= button_to "Add Bookshelf", '/' %>
-        <%= button_to "Rate It", '/' %>
       </div>
     </div>
     <div class = "book-information">
@@ -43,11 +42,23 @@
         <% review.rating.times do %>
           <span class="fa fa-star checked"></span>
         <% end %>
-        <br>
         <img src = <%= image_url(review.user.avatar_url) %>>
-        <p><b><%= review.user.name %> says</b></p>
+        <p class = "username"><%= review.user.name %> says</p>
         <p class = "content"><%= review.content %></p>
       </div>
     <% end %>
+    <div class = "reivew-form">
+      <h2>Leave A Review!</h2>
+      <%= form_for @book.reviews.build do |f|%>
+        <%= f.number_field :rating, min: 1, max: 5 %><br><br>
+
+        <%= f.text_area :content%><br><br>
+
+        <%= f.hidden_field :book_id, value: @book.id %>
+        <%= f.hidden_field :user_id, value: 1 %>
+
+        <%= f.submit%>
+      <% end %>
+    </div>
   </div>
 </div>
