@@ -43,7 +43,7 @@
           <span class="fa fa-star checked"></span>
         <% end %>
         <img src = <%= image_url(review.user.avatar_url) %>>
-        <p class = "username"><%= review.user.name %> says</p>
+        <p class = "username"><a href= <%= user_path(review.user)%>><%= review.user.name %> </a>says</p>
         <p class = "content"><%= review.content %></p>
       </div>
     <% end %>

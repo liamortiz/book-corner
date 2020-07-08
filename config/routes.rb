@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   patch '/sessions/clear', to: 'sessions#clear_session', as: 'clear_session'
 
   resources :reviews, only: [:create]
-  resources :users
+  resources :users, only: [:create, :show]
 
 
   root "static#index"

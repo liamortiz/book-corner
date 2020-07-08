@@ -28,6 +28,6 @@ class BooksController < ApplicationController
     end
 
     def query
-      (params[:q] ? params[:q] : 'anime')
+      (params[:q] ? params[:q] : 'comics')
     end
 end
