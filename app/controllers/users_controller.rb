@@ -8,7 +8,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
+    @user = User.create(user_params)
+    if @user.valid?
+      redirect_to '/'
+    else
+      byebug
+      flash[:errors] = @user.errors.full_messages
+    end
   end
 
   def sign_in

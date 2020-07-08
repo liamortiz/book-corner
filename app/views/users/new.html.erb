@@ -7,3 +7,12 @@
     <%= f.submit "Sign Up" %>
   <% end %>
 </div>
+
+<div>
+<% if flash[:errors]%>
+    <% flash[:errors].each do |error|%>
+    <%= error%>
+    <%end%>
+<%end%>
+
+</div>
