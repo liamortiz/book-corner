@@ -1,21 +1,30 @@
 <h1> Show Page for "<%= @book.title%>"</h1>
 
-
-
 <p><img src = <%= @book.image_link%>></p><br>
-<p>Author: <%= @book.authors%></p>
+<b><p>Author:</b> <%= @book.authors%></p>
 
-<p>Published: <%= @book.published_date%></p>
-<p>Category: <%= @book.categories%></p>
-<p>Average User Rating: <%= @book.average_rating%></p><br>
-<p>Rating Count: <%= @book.ratings_count%></p><br>
-<p>Description: <%= @book.description%></p><br>
-<hr>
+<b><p>Published:</b><%= @book.published_date %>  
+<b><p>Category:</b> <%= @book.categories%></p>
+<b><p>Average User Rating:</b> <%= @book.average_rating%></p>
+<b><p>Rating Count:</b> <%= @book.ratings_count%></p><br>
+<b><p>Description:</b> <%= @book.description%></p><br>
+
+<hr><br>
+
 <%= link_to "Add a Review", new_review_path %>
-<hr>
-<p>Reviews</p>
-    <% @book.reviews.each do |review|%>
-       Content: <%= review.content%><br>
-       Rating:  <%= review.rating%><br>
-        <%= review.user.name%>
+
+<br><br><hr>
+
+<h2>Reviews</h2>
+
+    <% if @book.reviews.empty? %>
+        <br><p>Be the first to review this book!</p><br>
+    <% else %>
+        <% @book.reviews.each do |review|%>
+            <fieldset>
+                User:  <%= review.user.name%><br>
+                Rating:  <%= review.rating%><br>
+                Content: <%= review.content%><br>
+            </fieldset>
+        <%end%>
     <%end%>
