@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   # has_secure_password
+
+  def password=(secret)
+    # byebug
+  end
 end

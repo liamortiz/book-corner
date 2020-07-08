@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/books/?q=:q&page=:page', to: 'books#index'
   get '/books', to: 'books#index'
 
-  patch '/sessions/clear', to: 'sessions#clear_session', as: 'clear_session'
+  
 
   resources :reviews, only: [:create]
   resources :users, only: [:create, :show]
