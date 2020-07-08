@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
-      redirect_to '/users/sign_in'
+      redirect_to '/'
     else
       byebug
       flash[:errors] = @user.errors.full_messages
