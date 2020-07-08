@@ -2,7 +2,11 @@
   <div class = "result-container">
     <div class = "settings">
       <h2>Categories</h2>
-
+      <div class= "categories">
+        <%= link_to "comics & cartoons", '/books/?q=comics+cartoons'%>
+        <%= link_to "love & romance", '/books/?q=love+romance'%>
+        <%= link_to "war", '/books/?q=war'%>
+      </div>
     </div>
     <div class = "result">
       <% @books.each do |book| %>

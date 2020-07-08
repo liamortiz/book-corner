@@ -15,7 +15,11 @@
     <div id = "wrapper">
       <nav class = "semi-nav">
         <a href="/"><h1 class = "logo">book<span>corner</span></h1></a>
-        <input type="text" placeholder= "The Great Gatsby">
+
+        <%= form_tag url_for(:controller => 'books', :action => 'search'), method: 'get' do %>
+          <%= text_field_tag :q, '', {placeholder: "The Great Gatsby"} %>
+          <%= submit_tag "Submit", style: "display: none"%>
+        <% end %>
 
         <ul>
           <li><a href="/" class = <%= current_class?('/') %>>Home</a></li>

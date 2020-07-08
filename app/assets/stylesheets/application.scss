@@ -55,9 +55,13 @@
       }
     }
   }
-  input {
+  form {
     flex: 1;
     display: inline-block;
+    margin-right: 2em;
+  }
+  input {
+    width: 100%;
     vertical-align: top;
     margin-left: 2em;
     padding: .5em;
