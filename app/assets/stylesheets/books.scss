@@ -35,6 +35,22 @@
           }
         }
       }
+      .pagination {
+        margin-top: 2em;
+        .active-page {
+          color: white;
+          background: $dark;
+          &:hover {color: white; background: $dark;}
+        }
+        a {
+          background-color: white;
+          color: black;
+          &:hover:not(.active-page) {
+            background-color: white;
+            text-decoration: underline;
+          }
+        }
+      }
     }
     .result {
       height: auto;
