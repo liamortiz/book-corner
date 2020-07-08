@@ -2,9 +2,13 @@ class BooksController < ApplicationController
 
     def index
       @books = GoogleBooks.search(self.query, {count: 40})
+      cookies[:page_count] = 1
+      cookies[:page_count].to_i = cookies[:page_count].to_i + 1
+     
     end
 
     def show
+      cookies[:zebra_farts] = "fffff"
        @book = Book.find_by(isbn: params[:isbn])
 
       unless @book
