@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+    # TODO: Fix weird browse page bug swapping book ISBNS
+    # TODO: Make code more efficient
     def index
       cookies[:count_it_out] = 1
       cookies[:count_it_out] = cookies[:count_it_out] + 1
@@ -7,7 +8,7 @@ class BooksController < ApplicationController
 
       # Filter the search results from the API via page index and query
       @books = GoogleBooks.search(self.query, {count: 40,
-        page: params[:page] ? params[:page].to_i : 1})
+        page: params[:page] ? params[:page].to_i : 1, order_by: 'newest'})
       # Remove any that doesn't have ISBNS
       @books = @books.select{|book| book.isbn}
     end

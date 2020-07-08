@@ -9,5 +9,4 @@ class Book < ApplicationRecord
       end
     end
   end
-
 end

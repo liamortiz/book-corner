@@ -74,4 +74,39 @@
       }
     }
   }
+  .book-details {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    .user-interaction {
+      flex: 1;
+      .book-image {
+        overflow: hidden;
+        display: block;
+        width: 8rem;
+        margin: 0 auto;
+      }
+    }
+    .book-information {
+      flex: 2;
+      h1 {
+        max-width: 50%;
+        font-size: 150%;
+      }
+      .authors {
+        margin-top: .4em;
+      }
+      .authors, .published {
+        font-weight: bold;
+      }
+      .description {
+        margin-top: 2em;
+        max-width: 30rem;
+        font-family: 'Roboto';
+        line-height: 1.5em;
+      }
+    }
+  }
 }
