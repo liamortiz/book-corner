@@ -28,12 +28,12 @@
           <li><%= link_to "My Books", user_path(@current_user), class: current_class?('/users/1')  %></li>
             <%end%>
             <% if @current_user%>
-          <li><%= link_to "Log-out", {controller: :sessions, action: :logout}, class: current_class?('/sessions/logout'), method: :delete %></li>
+          <li><%= link_to "Log Out", {controller: :sessions, action: :logout}, class: current_class?('/sessions/logout'), method: :delete %></li>
           <li>Welcome, <%= @current_user.name %>!</li>
 
             <%else%>
           <%# CAUSING ISSUES PER ZOOM CALL FIXED WITH line 28 <li><%= link_to "My Books", user_path(@user), class: current_class?("/users/#{@user.id}") %></li> 
-          <li><%= link_to "Login", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
+          <li><%= link_to "Sign In", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
             <%end%>
         </ul>
       </nav>

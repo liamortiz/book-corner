@@ -33,11 +33,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def handle_sign_in
-    byebug
-    # @user = User.find_by(email: params[:user][:email])
-    # @user.password ==
-  end
+  # def handle_sign_in
+  #   byebug
+  #   # @user = User.find_by(email: params[:user][:email])
+  #   # @user.password ==
+  # end
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
