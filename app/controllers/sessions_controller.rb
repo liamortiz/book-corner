@@ -1,17 +1,14 @@
 class SessionsController < ApplicationController
 
-    # def login 
-    # end 
 
-    def create
-        # byebug
-        user = User.find_by(email: params[:session][:email])
-    
-        if user.authenticate(params[:session][:password])
+    def create 
+        user = User.find_by(email: params[:session][:email])      
+        if user != nil && user.authenticate(params[:session][:password])
           session[:user_id] = user.id
           redirect_to user_path(user.id)
         else  
-          redirect_to new_login_path
+          flash[:errors] = "Wrong email and/or password"
+          redirect_to sign_in_path
         end 
     end
 

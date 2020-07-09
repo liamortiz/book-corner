@@ -2,22 +2,16 @@
   <h2>Welcome Back!</h2>
 
   <%= form_for :session, url: '/sessions', html: {autocomplete: "off"} do |f| %>
-  <%# <%= f.label :email %> 
-  <%= f.text_field :email,placeholder: "example@gmail.com", required: :required %>
-
-  <%# <%= f.label :password %> 
-  <%= f.text_field :password, placeholder: "Password", required: :required %>
-
-  <%= f.submit "Sign In"%>
-  <%= link_to "register", "/" %>
- <% end %>
-
-  <%# <%= form_with model: User.new, method: :post, html: {autocomplete: "off"} do |f| %> 
-    <%# <%= f.email_field :email, placeholder: "example@gmail.com", required: :required %> 
-    <%# <%= f.password_field :password, placeholder: "Password", required: :required %> 
-    <%# <%= f.submit "Sign In", {controller: :sessions, action: :create} %> 
-    <%# <%= link_to "register", "/" %> 
-  <%# <% end %> 
+    <%= f.text_field :email,placeholder: "example@gmail.com", required: :required %>
+    <%= f.password_field :password, placeholder: "Password", required: :required %> 
+    <%= f.submit "Sign In"%>
+    <%= link_to "register", "/" %>
+  <% end %>
+ 
+  <% if flash[:errors]%>
+     <br> <p style="color:red"><%= flash[:errors]%></p>
+  
+  <%end%>
 </div>
 
 <img src= <%= image_url("book.svg")%> alt="" class = "book-icon">
