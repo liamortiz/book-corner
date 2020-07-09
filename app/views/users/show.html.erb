@@ -46,6 +46,7 @@
               <span class="fa fa-star"></span>
             <% end %>
           </div>
+          <br><center><p><b><%=@review.book.title%> </b></p></center><br>
           <p><%= @review.content %></p>
           <% if @current_user == @user %>
           <%= button_to "Remove Review", review_path(@review), method: :delete, class: 'remove' %>
