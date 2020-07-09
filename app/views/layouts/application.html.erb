@@ -26,7 +26,7 @@
           <li><%= link_to "Browse", '/books/?q=comics&page=1', class: current_class?(books_path) %></li>
 
             <% if @current_user%>
-              <li><%= link_to "My Books", user_path(@current_user), class: current_class?("/users/#{@current_user.id}")  %></li>
+              <li><%= link_to "My Corner", user_path(@current_user), class: current_class?("/users/#{@current_user.id}")  %></li>
             <%end%>
 
             <% if @current_user%>
