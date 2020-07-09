@@ -7,7 +7,13 @@
         <% else %>
           <img src = <%= @book.image_link%>>
         <% end %>
-        <%= button_to "Add Bookshelf", '/' %>
+
+        <% if @user && @user.books.include?(@book) %>
+          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @user.id)), method: :delete %>
+        <% else %>
+          <%= button_to "Add Book", user_shelves_path(), params: {isbn: @book.isbn} %>
+        <% end %>
+
       </div>
     </div>
     <div class = "book-information">
@@ -55,11 +61,11 @@
         <%= f.text_area :content%><br><br>
 
         <%= f.hidden_field :book_id, value: @book.id %>
-        <%= f.hidden_field :user_id, value: 1 %>
+        <%= f.hidden_field :user_id, value: @user.id %>
 
         <%= f.submit%>
       <% end %>
     </div>
   </div>
- 
+
 </div>
