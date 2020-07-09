@@ -1,24 +1,21 @@
-# README
+# Book Corner
+<img src="https://i.ibb.co/Z2rnMzN/Capture.png" alt="Capture" border="0">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby -v 2.6.5
 
-Things you may want to cover:
+## Instructions
+<ol>
+  <li>Through the terminal navigate to the root directory</li>
+  <li>Run bundle install</li>
+  <li>Run migrations and seeds</li>
+</ol>
 
-* Ruby version
+## Tools
+<ul>
+  <li>Ruby</li>
+  <li>Rails</li>
+  <li>SQLite</li>
+  <li>CSS/SASS</li>
+  <li>HTML5</li>
+</ul>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
