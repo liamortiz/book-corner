@@ -24,8 +24,14 @@
         <ul>
           <li><a href="/" class = <%= current_class?('/') %>>Home</a></li>
           <li><%= link_to "Browse", '/books/?q=comics&page=1', class: current_class?(books_path) %></li>
-          <li><%= link_to "My Books", user_path(@user), class: current_class?("/users/#{@user.id}")  %></li>
-          <li><%= link_to "Sign In", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
+          <% if @user %>
+            <li><%= link_to "My Books", user_path(@user), class: current_class?("/users/#{@user.id}")  %></li>
+          <% else %>
+            <li><%= link_to "My Books", '/' %></li>
+          <% end %>
+          <% unless @user %>
+            <li><%= link_to "Sign In", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
+          <% end %>
         </ul>
       </nav>
 

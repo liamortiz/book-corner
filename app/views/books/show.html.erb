@@ -10,7 +10,7 @@
 
         <% if @user && @user.books.include?(@book) %>
           <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @user.id)), method: :delete %>
-        <% else %>
+        <% elsif @user %>
           <%= button_to "Add Book", user_shelves_path(), params: {isbn: @book.isbn} %>
         <% end %>
 
@@ -54,18 +54,21 @@
       </div>
     <% end %>
     <div class = "reivew-form">
-      <h2>Leave A Review!</h2>
-      <%= form_for @book.reviews.build do |f|%>
-        <%= f.number_field :rating, min: 1, max: 5 %><br><br>
+      <% if @user %>
+        <h2>Leave A Review!</h2>
+        <%= form_for @book.reviews.build do |f|%>
+          <%= f.number_field :rating, min: 1, max: 5 %><br><br>
 
-        <%= f.text_area :content%><br><br>
+          <%= f.text_area :content%><br><br>
 
-        <%= f.hidden_field :book_id, value: @book.id %>
-        <%= f.hidden_field :user_id, value: @user.id %>
+          <%= f.hidden_field :book_id, value: @book.id %>
+          <%= f.hidden_field :user_id, value: @user.id %>
 
-        <%= f.submit%>
+          <%= f.submit%>
+        <% end %>
+      <% else %>
+        <h2>Login to leave reviews!</h2>
       <% end %>
     </div>
   </div>
-
 </div>
