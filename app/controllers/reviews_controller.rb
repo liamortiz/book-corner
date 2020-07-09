@@ -28,7 +28,10 @@ class ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find(params[:id])
+        book = @review.book
         @review.destroy
+
+        book.update_rating_average
         redirect_to user_path(@review.user_id)
     end
 

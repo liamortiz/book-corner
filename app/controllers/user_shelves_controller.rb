@@ -19,6 +19,6 @@ class UserShelvesController < ApplicationController
     @book = @shelf.book
 
     @shelf.destroy
-    redirect_to "/books/#{@book.isbn}"
+    redirect_to user_path(@current_user)
   end
 end
