@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  $avatar_array = ["avatar_1.jpg","avatar_2.jpg","avatar_3.jpg"]
 
   def index
   end
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    @user.update(avatar_url: "avatar_2.jpg")
+    @user.update(avatar_url: $avatar_array.sample)
 
     if @user.valid?
       session[:user_id] = @user.id

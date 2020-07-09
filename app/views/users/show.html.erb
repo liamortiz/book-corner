@@ -7,10 +7,14 @@
       <h2><%= @user.name %></h2>
       <div class = "divider"></div>
 
-      <p class = "reviews-count"><%= @user.reviews.count %> reviews <br> <%= @user.books.count %> books on shelf</p>
+      <p class = "reviews-count"><%= @user.reviews.count %> reviews <br> 
+      <% if @current_user.id == @user.id %>
+        <%= @user.books.count %> books on shelf</p>
+      <%end%>
     </div>
   </div>
 
+  <% if @current_user.id == @user.id %>
   <h2>Book Shelf</h2>
   <div class = "user-books">
     <% @user.books.each do |book| %>
@@ -20,6 +24,7 @@
       </div>
     <% end %>
   </div>
+  <%end%>
 
   <div class = "recent-reviews">
     <h2>Recent Reviews</h2>
@@ -38,7 +43,9 @@
             <% end %>
           </div>
           <p><%= @review.content %></p>
+          <% if @current_user.id == @user.id %>
           <%= button_to "Remove Review", review_path(@review), method: :delete %>
+          <%end%>
         </div>
       </div>
     <% end %>
