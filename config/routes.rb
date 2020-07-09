@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/books/:isbn', to: 'books#show', as: 'book'
   get '/books/?q=:q&page=:page', to: 'books#index'
   get '/books', to: 'books#index'
-
+  # get "/users/register", to: "users#register"
 
 
   resources :reviews, only: [:create, :destroy]

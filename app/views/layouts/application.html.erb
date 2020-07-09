@@ -30,7 +30,7 @@
             <% if @current_user%>
           <li>Welcome, <%= @current_user.name %>!</li>
             <%else%>
-          <%# <li><%= link_to "My Books", user_path(@user), class: current_class?("/users/#{@user.id}")  %></li> 
+          <%# CAUSING ISSUES PER ZOOM CALL FIXED WITH line 28 <li><%= link_to "My Books", user_path(@user), class: current_class?("/users/#{@user.id}") %></li> 
           <li><%= link_to "Sign In", {controller: :users, action: :sign_in}, class: current_class?('/users/sign_in') %></li>
             <%end%>
         </ul>

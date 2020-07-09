@@ -1,6 +1,8 @@
 <div id = "user-wrapper">
   <div class = "user-header">
+  <% if @user.avatar_url%>
     <img src = <%= image_url(@user.avatar_url) %> alt="">
+    <%end%>
     <div class = "user-details">
       <h2><%= @user.name %></h2>
       <div class = "divider"></div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :auth_user, only: [:new, :create, :sign_in]
+  # skip_before_action :auth_user, only: [:new, :create, :sign_in, :register]
 
   def index
   end
@@ -25,6 +25,10 @@ class UsersController < ApplicationController
   end
 
   def sign_in
+  end
+
+  def register
+    @user = User.new
   end
 
   def handle_sign_in

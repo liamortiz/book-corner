@@ -48,11 +48,14 @@
         <% review.rating.times do %>
           <span class="fa fa-star checked"></span>
         <% end %>
+          <% if review.user.avatar_url %>
         <img src = <%= image_url(review.user.avatar_url) %>>
+          <%end%>
         <p class = "username"><a href= <%= user_path(review.user)%>><%= review.user.name %> </a>says</p>
         <p class = "content"><%= review.content %></p>
       </div>
     <% end %>
+    <% if @current_user%>
     <div class = "reivew-form">
       <h2>Leave A Review!</h2>
       <%= form_for @book.reviews.build do |f|%>
@@ -61,11 +64,12 @@
         <%= f.text_area :content%><br><br>
 
         <%= f.hidden_field :book_id, value: @book.id %>
-        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.hidden_field :user_id, value: @current_user.id %>
 
         <%= f.submit%>
       <% end %>
     </div>
+      <%end%>
   </div>
 
 </div>
