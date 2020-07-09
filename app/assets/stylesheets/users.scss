@@ -14,18 +14,56 @@
   }
 }
 
+.divider {
+  height: .1px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 50%;
+}
 
 #user-wrapper {
   .user-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     padding: 1em;
     h2 {
-      color: $dark;
+      color: $greenish;
+      font-family: 'Roboto';
+    }
+    .user-details {
+      flex: 2;
+      p {
+        margin: 1em;
+        font-family: 'Helvetica';
+      }
     }
     img {
+      margin-left: 2em;
       display: block;
-      width: 12rem;
+      width: 10.5rem;
       height: 10rem;
       border-radius: 100%;
+      border: 1px solid $greenish;
+    }
+  }
+  .recent-reviews {
+    margin: 1em 0;
+    margin-bottom: 5em;
+    min-height: 10rem;
+    h2 {
+      font-family: 'Helvetica';
+      text-align: center;
+    }
+    p {
+      max-width: 50%;
+      margin: 0 auto;
+      font-family: 'Helvetica';
+      line-height: 1.2em;
+    }
+    .stars {
+      width: 8rem;
+      margin: 0 auto;
+      margin-top: 1em;
     }
   }
   .user-books {
