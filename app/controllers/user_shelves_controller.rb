@@ -4,14 +4,13 @@ class UserShelvesController < ApplicationController
     @user_shelf = UserShelf.new
   end
 
-
   def create
     @book = Book.find_by(isbn: params[:isbn])
     if @current_user
       UserShelf.find_or_create_by(user_id: @current_user.id, book_id: @book.id)
       redirect_to "/books/#{@book.isbn}"
     else
-      redirect_to '/'#statics_path
+      redirect_to '/'
     end
   end
 

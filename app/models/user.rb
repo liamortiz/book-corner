@@ -16,6 +16,6 @@ class User < ApplicationRecord
   # end
 
   # def password
-    
+
   # end
 end

@@ -45,6 +45,16 @@
   justify-content: flex-start;
   flex-wrap: nowrap;
   flex-direction: row;
+  p {
+    float: right;
+    margin-top: -.5em;
+    padding: .5em;
+    color: white;
+    display: inline-block;
+    background-color: $greenish;
+    font-family: 'Roboto';
+    border-radius: 10px;
+  }
   a {
     text-decoration: none;
     color: $greenish;
