@@ -43,7 +43,9 @@
             <% end %>
           </div>
           <p><%= @review.content %></p>
+          <% if @current_user.id == @user.id %>
           <%= button_to "Remove Review", review_path(@review), method: :delete %>
+          <%end%>
         </div>
       </div>
     <% end %>
