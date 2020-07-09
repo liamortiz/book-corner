@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :reviews, only: [:create]
+  resources :reviews, only: [:create, :destroy]
   resources :users, only: [:create, :show]
   resources :user_shelves, only: [:create, :destroy]
 

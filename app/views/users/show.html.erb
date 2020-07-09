@@ -36,6 +36,7 @@
             <% end %>
           </div>
           <p><%= @review.content %></p>
+          <%= button_to "Remove Review", review_path(@review), method: :delete %>
         </div>
       </div>
     <% end %>

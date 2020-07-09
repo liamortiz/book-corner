@@ -55,6 +55,21 @@
     margin: 1em 0;
     margin-bottom: 5em;
     min-height: 10rem;
+    input {
+      display: block;
+      width: 8rem;
+      padding: .5em;
+      border: none;
+      background: $greenish;
+      color: white;
+      font-family: 'Helvetica';
+      margin: 2em auto;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($greenish, 10%);
+      }
+    }
+
     .review-container {
       display: flex;
       flex-direction: row;
@@ -66,6 +81,7 @@
       img {
         width: 8rem;
         height: 10rem;
+        padding: 1.5em;
       }
       .review-info {
         flex: 2;
