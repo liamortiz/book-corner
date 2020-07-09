@@ -17,5 +17,6 @@
   <li>SQLite</li>
   <li>CSS/SASS</li>
   <li>HTML5</li>
+  <li>Google API</li>
 </ul>
 
