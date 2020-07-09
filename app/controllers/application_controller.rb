@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
     private
 
     def auth_user
-      @user = User.first
+      @user = User.second
     end
 end

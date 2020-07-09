@@ -21,6 +21,10 @@
 }
 
 #user-wrapper {
+  h2 {
+    font-family: 'Helvetica';
+    text-align: center;
+  }
   .user-header {
     display: flex;
     flex-direction: row;
@@ -29,6 +33,7 @@
     h2 {
       color: $greenish;
       font-family: 'Roboto';
+      text-align: left;
     }
     .user-details {
       flex: 2;
@@ -43,30 +48,69 @@
       width: 10.5rem;
       height: 10rem;
       border-radius: 100%;
-      border: 1px solid $greenish;
+      border: 1px solid gray;
     }
   }
   .recent-reviews {
     margin: 1em 0;
     margin-bottom: 5em;
     min-height: 10rem;
-    h2 {
-      font-family: 'Helvetica';
-      text-align: center;
+    .review-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap:nowrap;
+      max-width: 80%;
+      margin: 1em auto;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      img {
+        width: 8rem;
+        height: 10rem;
+      }
+      .review-info {
+        flex: 2;
+      }
     }
     p {
-      max-width: 50%;
+      width: 60%;
       margin: 0 auto;
       font-family: 'Helvetica';
       line-height: 1.2em;
     }
     .stars {
       width: 8rem;
-      margin: 0 auto;
-      margin-top: 1em;
+      margin: auto;
+      margin-top: 2em;
     }
   }
   .user-books {
-
+    max-width: 70rem;
+    margin: 2em auto;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      width: 8rem;
+      height: 10rem;
+      margin: 0 1em;
+    }
+    input {
+      display: block;
+      width: 8rem;
+      padding: .5em;
+      border: none;
+      background: $greenish;
+      color: white;
+      font-family: 'Helvetica';
+      margin: auto;
+      margin-top: -.5em;
+      margin-bottom: 1em;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($greenish, 10%);
+      }
+    }
   }
 }

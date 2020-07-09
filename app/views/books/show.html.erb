@@ -61,7 +61,7 @@
         <%= f.text_area :content%><br><br>
 
         <%= f.hidden_field :book_id, value: @book.id %>
-        <%= f.hidden_field :user_id, value: 1 %>
+        <%= f.hidden_field :user_id, value: @user.id %>
 
         <%= f.submit%>
       <% end %>

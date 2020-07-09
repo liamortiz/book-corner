@@ -9,25 +9,35 @@
     </div>
   </div>
 
-  <div class = "recent-reviews">
-    <h2>Recent Reviews</h2>
-    <% [5, @user.reviews.count].min.times do |index| %>
-      <div class = "stars">
-        <% @user.reviews[index].rating.times do %>
-          <span class="fa fa-star checked"></span>
-        <% end %>
-        <% (5 - @user.reviews[index].rating).times do %>
-          <span class="fa fa-star"></span>
-        <% end %>
+  <h2>Book Shelf</h2>
+  <div class = "user-books">
+    <% @user.books.each do |book| %>
+      <div>
+        <a href = <%= "/books/#{book.isbn}"%>><img src= <%= book.image_link %> alt=""></a>
+        <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: book.id, user_id: @user.id)), method: :delete %>
       </div>
-      <p><%= @user.reviews[index].content %></p>
     <% end %>
   </div>
 
-  <div class = "user-books">
-    <h2>Book Shelf</h2>
-    <% @user.books.each do |book| %>
-      <img src= <%= book.image_link %> alt="">
+  <div class = "recent-reviews">
+    <h2>Recent Reviews</h2>
+    <% [5, @user.reviews.count].min.times do |index| %>
+      <div class = "review-container">
+        <% @review = @user.reviews.reverse[index]%>
+
+        <a href= <%= "/books/#{@review.book.isbn} "%>><img src= <%= @review.book.image_link %> alt=""></a>
+        <div class = "review-info">
+          <div class = "stars">
+            <% @review.rating.times do %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <% (5 - @review.rating).times do %>
+              <span class="fa fa-star"></span>
+            <% end %>
+          </div>
+          <p><%= @review.content %></p>
+        </div>
+      </div>
     <% end %>
   </div>
 
