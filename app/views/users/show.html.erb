@@ -7,24 +7,28 @@
       <h2><%= @user.name %></h2>
       <div class = "divider"></div>
 
-      <p class = "reviews-count"><%= @user.reviews.count %> reviews <br> 
-      <% if @current_user.id == @user.id %>
-        <%= @user.books.count %> books on shelf</p>
+      <p class = "reviews-count"><%= @user.reviews.count %> reviews <br>
+      <% if @user.books.count > 0 %>
+        <%= @user.books.count %> favorite books</p>
       <%end%>
     </div>
   </div>
 
-  <% if @current_user.id == @user.id %>
-  <h2>Book Shelf</h2>
+  <% if @user.books.count > 0 %>
+    <h2>Book Shelf</h2>
+  <% end %>
+  
   <div class = "user-books">
     <% @user.books.each do |book| %>
       <div>
         <a href = <%= "/books/#{book.isbn}"%>><img src= <%= book.image_link %> alt=""></a>
-        <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: book.id, user_id: @user.id)), method: :delete, class: 'remove' %>
+        <% if @current_user == @user %>
+          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: book.id, user_id: @user.id)), method: :delete, class: 'remove' %>
+        <% end %>
       </div>
     <% end %>
   </div>
-  <%end%>
+
 
   <div class = "recent-reviews">
     <h2>Recent Reviews</h2>
@@ -43,8 +47,8 @@
             <% end %>
           </div>
           <p><%= @review.content %></p>
-          <% if @current_user.id == @user.id %>
-          <%= button_to "Remove Review", review_path(@review), method: :delete %>
+          <% if @current_user == @user %>
+          <%= button_to "Remove Review", review_path(@review), method: :delete, class: 'remove' %>
           <%end%>
         </div>
       </div>
