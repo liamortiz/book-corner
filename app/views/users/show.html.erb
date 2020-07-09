@@ -16,7 +16,7 @@
     <% @user.books.each do |book| %>
       <div>
         <a href = <%= "/books/#{book.isbn}"%>><img src= <%= book.image_link %> alt=""></a>
-        <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: book.id, user_id: @user.id)), method: :delete %>
+        <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: book.id, user_id: @user.id)), method: :delete, class: 'remove' %>
       </div>
     <% end %>
   </div>

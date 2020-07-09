@@ -91,6 +91,9 @@
           cursor: pointer;
           background-color: lighten($greenish, 10%);
         }
+        &:focus {
+          outline: none;
+        }
       }
       flex: 1;
       .book-image {

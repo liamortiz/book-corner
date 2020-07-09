@@ -9,7 +9,7 @@
         <% end %>
 
         <% if @current_user && @current_user.books.include?(@book) %>
-          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @current_user.id)), method: :delete %>
+          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @current_user.id)), method: :delete, class: "remove"%>
         <% elsif @current_user %>
           <%= button_to "Add Book", user_shelves_path(), params: {isbn: @book.isbn} %>
         <% end %>
@@ -55,7 +55,7 @@
         <p class = "content"><%= review.content %></p>
       </div>
     <% end %>
-    <%# <% if @current_user %> 
+    <%# <% if @current_user %>
     <div class = "reivew-form">
       <% if @current_user %>
         <h2>Leave A Review!</h2>
@@ -67,7 +67,7 @@
           <%= f.hidden_field :book_id, value: @book.id %>
           <%= f.hidden_field :user_id, value: @current_user.id %>
           <%# <%= f.hidden_field :book_id, value: @book.id LINE 69 AND 70 WERE BEFORE USER SESSION WAS BUILT %>
-          <%# <%= f.hidden_field :user_id, value: @user.id %> 
+          <%# <%= f.hidden_field :user_id, value: @user.id %>
 
           <%= f.submit%>
         <% end %>
@@ -75,6 +75,6 @@
         <h2><%= link_to "Sign in to leave a review!", sign_in_path%></h2>
       <% end %>
     </div>
-      <%# <%end%> 
+      <%# <%end%>
   </div>
 </div>

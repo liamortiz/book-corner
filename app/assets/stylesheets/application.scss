@@ -37,6 +37,13 @@
   margin: 0 auto;
 }
 
+.remove {
+  background: lighten(red, 10%) !important;
+  &:hover {
+    background: darken(red, 10%) !important;
+  }
+}
+
 .semi-nav {
   height: 2rem;
   padding: 1em;
