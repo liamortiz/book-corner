@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
+  # skip_before_action :auth_user, only: [:show, :index]
+
     # TODO: Fix weird browse page bug swapping book ISBNS
-    # TODO: Make code more efficient
     def index
       # Filter the search results from the API via page index and query
       @books = GoogleBooks.search(self.query, {count: 40,
@@ -11,7 +12,6 @@ class BooksController < ApplicationController
 
     def show
       # If the book is in the databse do nothing
-      # Else add the book to the databse
       @book = Book.find_by(isbn: params[:isbn])
       unless @book
         @book = GoogleBooks.search(isbn: params[:isbn]).first

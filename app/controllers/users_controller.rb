@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  skip_before_action :auth_user, only: [:new, :create, :sign_in]
+
+  def index
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -8,11 +13,13 @@ class UsersController < ApplicationController
   end
 
   def create
+   
     @user = User.create(user_params)
     if @user.valid?
-      redirect_to '/'
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
-      byebug
+     
       flash[:errors] = @user.errors.full_messages
     end
   end

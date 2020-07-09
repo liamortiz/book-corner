@@ -6,24 +6,20 @@
       </h2>
     </div>
     <div class = "create-account-form">
-      <h2>Create a free account!</h2>
-      <%= form_with model: User.new, method: :post, html: {autocomplete: "off"} do |f| %>
-        <%= f.text_field :name, placeholder: "Name", required: :required %>
-        <%= f.email_field :email, placeholder: "example@gmail.com", required: :required %>
-        <%= f.password_field :password, placeholder: "Password", required: :required %>
-        <%= f.submit "Sign Up" %>
-      <% end %>
+      <% if @current_user%>
+        <%@current_user%>
+      <%else%>
+        <h2>Create a free account!</h2>
+        <%= form_with model: User.new, method: :post, html: {autocomplete: "off"} do |f| %>
+          <%= f.text_field :name, placeholder: "Name", required: :required %>
+          <%= f.email_field :email, placeholder: "example@gmail.com", required: :required %>
+          <%= f.password_field :password, placeholder: "Password", required: :required %>
+          <%= f.submit "Sign Up" %>
+        <% end %>
+      <%end%>
     </div>
   </div>
 
-  <div>
-<% if flash[:errors]%>
-    <% flash[:errors].each do |error|%>
-    <%= error%>
-    <%end%>
-<%end%>
-
-</div>
 
   <div class = "features-preview">
     <div class = "categories">
@@ -108,4 +104,12 @@
     </div>
   </div>
 
+  <div>
+<% if flash[:errors]%>
+    <% flash[:errors].each do |error|%>
+    <%= error%>
+    <%end%>
+<%end%>
+
+</div>
 </div>

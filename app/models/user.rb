@@ -7,9 +7,15 @@ class User < ApplicationRecord
   validates :name, :email, :password, presence: true
   validates :email, uniqueness: true
 
-  # has_secure_password
+  has_secure_password
 
-  def password=(secret)
-    # byebug
-  end
+  # def password=(secret)
+  #   # byebug
+  #   hashed_pass = BCrypt::Password.create(secret)
+  #   self.password_digest = hashed_pass
+  # end
+
+  # def password
+    
+  # end
 end
