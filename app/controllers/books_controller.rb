@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  # skip_before_action :auth_user, only: [:show, :index]
+
     # TODO: Fix weird browse page bug swapping book ISBNS
     # TODO: Make code more efficient
     def index

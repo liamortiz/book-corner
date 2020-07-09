@@ -11,8 +11,8 @@ User.destroy_all
 Review.destroy_all
 avatar_array = ["avatar_1.jpg","avatar_2.jpg","avatar_3.jpg"]
 
-10.times do
-    User.create(email: Faker::Internet.email, password: Faker::Color.hex_color , avatar_url:avatar_array.sample, name: Faker::Name.name)
-end
+# 10.times do
+#     User.create(email: Faker::Internet.email, password: Faker::Color.hex_color , avatar_url:avatar_array.sample, name: Faker::Name.name)
+# end
 
 

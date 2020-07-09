@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_174331) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "name"
     t.string "avatar_url"
     t.datetime "created_at", precision: 6, null: false

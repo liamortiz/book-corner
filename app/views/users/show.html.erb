@@ -1,7 +1,9 @@
 <div id = "user-wrapper">
   <div class = "user-header">
     <h2><%= @user.name %></h2>
-    <img src = <%= image_url(@user.avatar_url) %> alt="">
+    <% if @user.avatar_url%>
+      <img src = <%= image_url(@user.avatar_url) %> alt="">
+      <%end%>
   </div>
 
   <div class = "user-books">
