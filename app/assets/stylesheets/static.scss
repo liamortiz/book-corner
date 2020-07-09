@@ -33,6 +33,11 @@
       background-color: lighten($greenish, 10%);
     }
   }
+  .error-message {
+    margin-top: .5em;
+    font-family: 'Roboto';
+    color: red;
+  }
 }
 
 #home-wrapper {

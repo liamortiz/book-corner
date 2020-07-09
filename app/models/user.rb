@@ -6,16 +6,7 @@ class User < ApplicationRecord
 
   validates :name, :email, :password, presence: true
   validates :email, uniqueness: true
+  validates :password, length: {in: 6..20, message: "is too short or too long!"}
 
   has_secure_password
-
-  # def password=(secret)
-  #   # byebug
-  #   hashed_pass = BCrypt::Password.create(secret)
-  #   self.password_digest = hashed_pass
-  # end
-
-  # def password
-
-  # end
 end
