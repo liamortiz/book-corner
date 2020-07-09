@@ -27,6 +27,8 @@ class UsersController < ApplicationController
   def sign_in
   end
 
+  
+
   def register
     @user = User.new
   end

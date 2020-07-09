@@ -8,9 +8,9 @@
           <img src = <%= @book.image_link%>>
         <% end %>
 
-        <% if @user && @user.books.include?(@book) %>
-          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @user.id)), method: :delete %>
-        <% elsif @user %>
+        <% if @current_user && @current_user.books.include?(@book) %>
+          <%= button_to "Remove Book", user_shelf_path(UserShelf.find_by(book_id: @book.id, user_id: @current_user.id)), method: :delete %>
+        <% elsif @current_user %>
           <%= button_to "Add Book", user_shelves_path(), params: {isbn: @book.isbn} %>
         <% end %>
 
@@ -55,9 +55,9 @@
         <p class = "content"><%= review.content %></p>
       </div>
     <% end %>
-    <% if @current_user%>
+    <%# <% if @current_user %> 
     <div class = "reivew-form">
-      <% if @user %>
+      <% if @current_user %>
         <h2>Leave A Review!</h2>
         <%= form_for @book.reviews.build do |f|%>
           <%= f.number_field :rating, min: 1, max: 5 %><br><br>
@@ -72,9 +72,9 @@
           <%= f.submit%>
         <% end %>
       <% else %>
-        <h2>Login to leave reviews!</h2>
+        <h2><%= link_to "Login to leave reviews!", users_sign_in_path%></h2>
       <% end %>
     </div>
-      <%end%>
+      <%# <%end%> 
   </div>
 </div>
