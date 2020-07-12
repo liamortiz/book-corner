@@ -11,8 +11,12 @@ class Book < ApplicationRecord
   end
 
   def update_rating_average
-    total = self.reviews.sum(&:rating)
-    rating = self.average_rating = (total / self.reviews.length).round
+    rating = 0
+    unless self.reviews.empty?
+      total = self.reviews.sum(&:rating)
+      rating = self.average_rating = (total / self.reviews.length).round
+    end
+
     self.update(average_rating: rating)
   end
 

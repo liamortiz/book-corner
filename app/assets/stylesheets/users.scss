@@ -17,7 +17,7 @@
 .divider {
   height: .1px;
   background: rgba(0, 0, 0, 0.3);
-  width: 50%;
+  width: 30%;
 }
 
 #user-wrapper {
@@ -31,6 +31,7 @@
     flex-wrap: nowrap;
     padding: 1em;
     h2 {
+      padding-top: 3em;
       color: $greenish;
       font-family: 'Roboto';
       text-align: left;
@@ -40,15 +41,16 @@
       p {
         margin: 1em;
         font-family: 'Helvetica';
+        padding: 1em;
       }
     }
     img {
-      margin-left: 2em;
+      margin-left: 6em;
+      margin-top: 4em;
       display: block;
       width: 10.5rem;
       height: 10rem;
       border-radius: 100%;
-      border: 1px solid gray;
     }
   }
   .recent-reviews {
