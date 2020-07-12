@@ -17,7 +17,7 @@ Hosted at: https://the-book-corner.herokuapp.com/
 <ul>
   <li>Ruby</li>
   <li>Rails</li>
-  <li>SQLite</li>
+  <li>PostgresSQL</li>
   <li>CSS/SASS</li>
   <li>HTML5</li>
   <li>Google API</li>
