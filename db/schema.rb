@@ -12,16 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2020_07_06_174331) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
-    t.string "title"
+    t.text "title"
     t.text "description"
-    t.string "authors"
+    t.text "authors"
     t.datetime "published_date"
-    t.string "categories"
-    t.string "isbn"
+    t.text "categories"
+    t.text "isbn"
     t.integer "average_rating"
     t.integer "ratings_count"
-    t.string "image_link"
+    t.text "image_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,10 +46,10 @@ ActiveRecord::Schema.define(version: 2020_07_06_174331) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "name"
-    t.string "avatar_url"
+    t.text "email"
+    t.text "password_digest"
+    t.text "name"
+    t.text "avatar_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
