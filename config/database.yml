@@ -4,8 +4,8 @@ development:
   encoding: unicode
   database: book-corner
   pool: 5
-  username:
-  password:
+  username: postgres
+  password: maldi123
   timeout: 5000
 
 
