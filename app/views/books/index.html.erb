@@ -22,11 +22,11 @@
           <% if book.image_link == nil %>
             <img class = "book-cover" src= <%= image_url("missing_cover.jpg") %> alt="">
           <% else %>
-            <img class = "book-cover" src= <%= book.image_link %> alt="">
+            <img class = "book-cover" src= <%= book.image_link %> alt= <%= "#{book.title}"%>>
           <% end %>
         </a>
       <% end %>
     </div>
   </div>
-   
+
 </div>

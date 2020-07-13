@@ -3,14 +3,18 @@
 .sign-in {
   padding: 3em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  width: 20rem;
+  max-width: 20rem;
+  box-sizing: border-box;
   margin: 2em auto;
-  margin-top: 5em;
+  margin-top: 2em;
   h2 {
     color: black;
   }
   a {
     margin-left: .5em;
+  }
+  #session_email, #session_password {
+    width: 90%;
   }
 }
 
@@ -18,6 +22,11 @@
   height: .1px;
   background: rgba(0, 0, 0, 0.3);
   width: 30%;
+}
+
+.book-icon {
+  background-repeat: no-repeat;
+  width: 100%;
 }
 
 #user-wrapper {
@@ -134,5 +143,19 @@
         background-color: lighten($greenish, 10%);
       }
     }
+  }
+}
+@media screen and (max-width: 500px) {
+  .logo {
+    display: none !important;
+  }
+  .semi-nav {
+    padding-left: 0 !important;
+    ul li {
+      margin: 0 .3em 0 .3em !important;
+    }
+  }
+  #welcome-user {
+    display: none;
   }
 }
