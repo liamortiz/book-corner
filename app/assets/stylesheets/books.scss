@@ -163,7 +163,7 @@
     }
     .reivew-form {
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-      width: 30rem;
+      max-width: 30rem;
       margin: 1em auto;
       text-align: center;
       padding: 2em;
@@ -203,6 +203,14 @@
           outline: none;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #book-wrapper {
+    .result-container {
+      flex-direction: column;
     }
   }
 }
