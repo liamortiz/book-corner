@@ -4,8 +4,8 @@ development:
   encoding: unicode
   database: book-corner
   pool: 5
-  username: postgres
-  password: ***REMOVED***
+  username:
+  password:
   timeout: 5000
 
 
